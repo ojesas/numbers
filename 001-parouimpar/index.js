@@ -1,7 +1,9 @@
 //Par ou Impar
 
+const colors = require('colors'); //requer instalação da biblioteca no cmd: npm install colors
+
 let numeros = [];
-for (let i = 0; i <= 33; i++) { numeros[i] = i; }
+for (let i = 0; i <= 99; i++) { numeros[i] = i; }
 
 
 function par_impar(numeros) {
@@ -18,17 +20,19 @@ function par_impar(numeros) {
             impares.push(numero);
         }
     }
-    process.stdout.write(`Foi fornecida uma lista com ${numeros.length} números, a seguir: `);
-    for (let n of numeros) { process.stdout.write(`${n} `); }
+    process.stdout.write(colors.bold(colors.yellow(`Foi fornecida uma lista com ${numeros.length} números, a seguir: `)));
+    for (let n of numeros) { process.stdout.write(colors.yellow(`${n} `)); }
     console.log("");
-    process.stdout.write(`Com ${npares} números pares, a seguir: `);
-    for (let par of pares) { process.stdout.write(`${par} `); }
+    process.stdout.write(colors.bold(colors.green(`Contendo ${npares} números pares, a seguir: `)));
+    for (let par of pares) { process.stdout.write(colors.green(`${par} `)); }
     console.log(``);
-    process.stdout.write(`E ${nimpares} números impares, a seguir: `);
-    for (let impar of impares) { process.stdout.write(`${impar} `); }
+    process.stdout.write(colors.bold(colors.blue(`E ${nimpares} números impares, a seguir: `)));  
+    for (let impar of impares) { process.stdout.write(colors.blue(`${impar} `)); }
+    
     console.log(``);
-
-
+    
+    
 }
 par_impar(numeros);
+
 
